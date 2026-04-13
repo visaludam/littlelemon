@@ -13,7 +13,7 @@ class Booking(models.Model):
 	number_of_guests = models.PositiveIntegerField()
 
 	def __str__(self):
-		return f"{self.name} - {self.date} {self.time}"
+		return "{} - {} {}".format(self.name, self.date, self.time)
 
 
 class Menu(models.Model):
@@ -23,4 +23,4 @@ class Menu(models.Model):
 	is_available = models.BooleanField(default=True)
 
 	def __str__(self):
-		return self.title
+		return '{} : {}'.format(self.title, self.price)
